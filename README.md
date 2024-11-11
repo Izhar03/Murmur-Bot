@@ -101,5 +101,5 @@ Email me at: izharhamdan@gmail.com
 
 ## 🙏 Acknowledgments
 
-- Thanks to all contributors who have helped shape Async Affbot
+- Thanks to all contributors who have helped shape Murmur Bot
 - Special thanks to the open-source community for the tools and libraries used in this project
