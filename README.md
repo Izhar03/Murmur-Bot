@@ -4,7 +4,7 @@ An asynchronous WhatsApp affiliate bot that provides personalized product recomm
 
 ## 🎯 Overview
 
-Async Affbot is designed to optimize affiliate marketing strategies by automatically engaging with users in WhatsApp groups. It captures product inquiries, generates tailored recommendations, and manages affiliate links through an intuitive admin dashboard.
+Murmum Bot is designed to optimize affiliate marketing strategies by automatically engaging with users in WhatsApp groups. It captures product inquiries, generates tailored recommendations, and manages affiliate links through an intuitive admin dashboard.
 
 ### Core Features
 
