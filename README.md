@@ -1,4 +1,4 @@
-# Murmum Bot
+# Murmur Bot
 
 An asynchronous WhatsApp affiliate bot that provides personalized product recommendations through intelligent message processing and affiliate link management.
 
