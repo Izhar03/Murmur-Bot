@@ -1,0 +1,12 @@
+aiohttp
+selenium
+groq
+openai
+python-dotenv
+requests
+fastapi==0.115.0
+uvicorn 
+jinja2 
+aiosqlite
+pydantic==2.9.2
+python-multipart

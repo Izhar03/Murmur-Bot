@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Affiliate Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        form {
+            display: inline;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .add-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .add-btn:hover {
+            background-color: #45a049;
+        }
+        .delete-btn:hover {
+            background-color: #e53935;
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pending Affiliate Links</h1>
+    
+    <!-- Flash Messages -->
+    {% if message %}
+        <div class="message {{ message_type }}">
+            {{ message }}
+        </div>
+    {% endif %}
+    
+    <table>
+        <tr>
+            <th>Unique Number</th>
+            <th>Contact</th>
+            <th>Message</th>
+            <th>Generated Response</th>
+            <th>Affiliate Link</th>
+            <th>Actions</th>
+        </tr>
+        {% for response in responses %}
+        <tr>
+            <!-- Display Response Details -->
+            <td>{{ response[0] }}</td>
+            <td>{{ response[1] }}</td>
+            <td>{{ response[2] }}</td>
+            <td>{{ response[3] }}</td>
+            
+            <!-- Add Affiliate Link Form -->
+            <td>
+                <form action="/add_affiliate/" method="post">
+                    <input type="hidden" name="unique_number" value="{{ response[0] }}">
+                    <input type="text" name="affiliate_link" placeholder="Enter Affiliate Link" required>
+            </td>
+            
+            <!-- Action Buttons: Add Affiliate Link & Delete Response -->
+            <td>
+                    <button type="submit" class="add-btn">Add</button>
+                </form>
+                
+                <!-- Delete Response Form -->
+                <form action="/delete_response/" method="post" onsubmit="return confirm('Are you sure you want to delete this response?');">
+                    <input type="hidden" name="unique_number" value="{{ response[0] }}">
+                    <button type="submit" class="delete-btn">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

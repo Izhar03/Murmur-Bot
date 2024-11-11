@@ -1,0 +1,11 @@
+# Ignore .env file containing environment variables
+.env
+
+# Ignore SQLite database file
+bot_database.db
+
+# Ignore virtual environment directory
+venv/
+
+# Ignore Python cache directories
+__pycache__/
